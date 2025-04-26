@@ -1,6 +1,18 @@
 @import url(/estilos/index.css);
 
+:root {
+    --fonte: "Noto Sans", serif;
+    --vermelho--c: #F08F7F;
+    --laranja--c: #F0AD6C;
+    --laranja--e:#F0773D;
+    --vermelho--e: #F0374C;
+    --bege: #F0CC8D;
+    --branco: #FFFFFF;
+    --preto: #000000;
+}
+
 body {
     background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
+    font-family: var(--fonte);
+    background-color: var(--branco);
 }
