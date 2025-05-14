@@ -1,18 +1,139 @@
-@import url(/estilos/index.css);
+@import url('./index.css');
 
 :root {
-    --fonte: "Noto Sans", serif;
-    --vermelho--c: #F08F7F;
-    --laranja--c: #F0AD6C;
-    --laranja--e:#F0773D;
-    --vermelho--e: #F0374C;
+    --fonte: "Noto Sans", sans-serif;
+    --vermelho-c: #F08F7F;
+    --laranja-c: #F0AD6C;
+    --laranja-e: #F0773D;
+    --vermelho-e: #F0374C;
     --bege: #F0CC8D;
     --branco: #FFFFFF;
     --preto: #000000;
+    --menu-size: 250px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    background-color: #f0f0f0;
     font-family: var(--fonte);
     background-color: var(--branco);
+    color: var(--preto);
+    line-height: 1.6;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Estilos para a barra lateral */
+.barra_lateral {
+    width: var(--menu-size);
+    height: 100vh;
+    background-color: var(--vermelho-c);
+    position: fixed;
+    left: 0;
+    top: 0;
+    color: var(--branco);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.logo {
+    padding: 2rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.barra {
+    padding-top: 2rem;
+    height: calc(100% - 100px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.barra_textos {
+    list-style-type: none;
+    padding: 0 1.5rem;
+}
+
+.barra_textos li {
+    margin-bottom: 1.5rem;
+}
+
+.barra_textos a {
+    display: block;
+    padding: 0.8rem 1rem;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: var(--transition);
+}
+
+.barra_textos a:hover, 
+.barra_textos a.active {
+    background-color: var(--laranja-e);
+    transform: translateX(5px);
+}
+
+.menu-secundario {
+    margin-bottom: 2rem;
+}
+
+
+footer {
+    background-color: var(--vermelho-c);
+    color: var(--branco);
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+}
+
+
+@media (max-width: 768px) {
+    :root {
+        --menu-size: 200px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .barra_lateral {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    
+    .barra {
+        padding-top: 1rem;
+        height: auto;
+    }
+    
+    .logo {
+        padding: 1rem;
+    }
+    
+    .menu-secundario {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
 }
