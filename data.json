@@ -1,0 +1,7 @@
+[
+  { "country": "South Africa", "screenTime": 56.8, "lat": -30.5595, "lng": 22.9375 },
+  { "country": "Brazil", "screenTime": 54.7, "lat": -14.235, "lng": -51.9253 },
+  { "country": "Philippines", "screenTime": 56.5, "lat": 12.8797, "lng": 121.774 },
+  { "country": "Thailand", "screenTime": 55.3, "lat": 15.870, "lng": 100.992 },
+  { "country": "Colombia", "screenTime": 54.3, "lat": 4.5709, "lng": -74.2973 }
+]
