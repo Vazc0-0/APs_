@@ -206,4 +206,129 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
         console.log('Gráfico 2 inicializado com sucesso!');
+
+    // Gráfico de recursos agregados
+    const ctxRecursos = document.getElementById('grafico-recursos').getContext('2d');
+
+    new Chart(ctxRecursos, {
+        type: 'bar',
+        data: {
+            labels: [
+                'Atmosfera',
+                'Biosfera',
+                'Hidrosfera',
+                'Litosfera - Combustíveis Fósseis',
+                'Litosfera - Terras',
+                'Litosfera - Metais',
+                'Litosfera - Minerais',
+                'Litosfera - Nuclear',
+                'Litosfera - Suporte',
+                'Litosfera - Serviços'
+            ],
+            datasets: [
+                {
+                    label: 'seJ/m³',
+                    data: [
+                        5e10,    // Atmosfera
+                        7e10,    // Biosfera
+                        1e11,    // Hidrosfera
+                        1e12,   // Litosfera - Combustíveis Fósseis
+                        5e11,   // Litosfera - Terras
+                        7e11,   // Litosfera - Metais
+                        4e11,   // Litosfera - Minerais
+                        3e11,   // Litosfera - Nuclear
+                        5e10,   // Litosfera - Suporte
+                        8e10    // Litosfera - Serviços
+                    ],
+                    backgroundColor: [
+                        '#4CAF50', // Atmosfera
+                        '#2196F3', // Biosfera
+                        '#FFC107', // Hidrosfera
+                        '#000000', // Litosfera - Combustíveis Fósseis (Preto)
+                        '#FF5722', // Litosfera - Terras
+                        '#E91E63', // Litosfera - Metais
+                        '#9C27B0', // Litosfera - Minerais
+                        '#607D8B', // Litosfera - Nuclear
+                        '#9C27B0', // Litosfera - Suporte (Roxo)
+                        '#FF9800'  // Litosfera - Serviços (Laranja)
+                    ],
+                    borderColor: '#333',
+                    borderWidth: 1,
+                    barThickness: 15 // Define a espessura das barras
+                }
+            ]
+        },
+        options: {
+            indexAxis: 'y', // Barras horizontais
+            responsive: true,
+            maintainAspectRatio: false, // Permite ajustar o tamanho do gráfico
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'top',
+                    labels: {
+                        color: '#333',
+                        font: {
+                            size: 14,
+                            family: 'Noto Sans'
+                        }
+                    }
+                },
+                tooltip: {
+                    backgroundColor: 'rgba(0, 0, 0, 0.7)',
+                    titleColor: '#fff',
+                    bodyColor: '#fff',
+                    borderColor: '#333',
+                    borderWidth: 1
+                }
+            },
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: 'seJ/m³',
+                        color: '#456789',
+                        font: {
+                            size: 14,
+                            family: 'Noto Sans'
+                        }
+                    },
+                    grid: {
+                        color: 'rgba(200, 200, 200, 0.2)',
+                        borderDash: [5, 5]
+                    },
+                    ticks: {
+                        color: '#333',
+                        font: {
+                            size: 12
+                        }
+                    }
+                },
+                y: {
+                    title: {
+                        display: true,
+                        text: 'Categorias de Recursos Agregados',
+                        color: '#333',
+                        font: {
+                            size: 14,
+                            family: 'Noto Sans'
+                        }
+                    },
+                    grid: {
+                        display: false
+                    },
+                    ticks: {
+                        color: '#333',
+                        font: {
+                            size: 12
+                        }
+                    },
+                    categoryPercentage: 0.8, // Ajusta o espaçamento entre as barras
+                    barPercentage: 0.9 // Ajusta a largura relativa das barras
+                }
+            }
+        }
     });
+
+    console.log('Gráfico de recursos agregados ajustado com sucesso!');
+});
