@@ -36,7 +36,6 @@ a {
     color: inherit;
 }
 
-/* Estilos para a barra lateral */
 .barra_lateral {
     width: var(--menu-size);
     height: 100vh;
@@ -86,8 +85,7 @@ a {
     transition: var(--transition);
 }
 
-.barra_textos a:hover, 
-.barra_textos a.active {
+.barra_textos a:hover {
     background-color: var(--laranja-e);
     transform: translateX(5px);
 }
