@@ -71,6 +71,12 @@ header h2 {
     text-align: justify;
 }
 
+.graficos {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+}
+
 .imagem-container {
     width: 100%;
     max-width: 800px;

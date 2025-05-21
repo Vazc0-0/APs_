@@ -1,0 +1,354 @@
+/* Estilos específicos para a página de criadores */
+
+/* Cabeçalho da página */
+.criadores-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.criadores-header h2 {
+    font-size: 2.5rem;
+    color: var(--vermelho-e);
+    margin-bottom: 0.5rem;
+}
+
+.subtitulo {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Conteúdo principal */
+.conteudo {
+    flex: 1;
+    padding: 2rem;
+    margin-left: var(--menu-size);
+    max-width: calc(100% - var(--menu-size));
+}
+
+/* Seção de introdução da equipe */
+.equipe-intro {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 4rem;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.intro-content {
+    flex: 1;
+    padding: 2rem;
+}
+
+.intro-content h3 {
+    color: var(--vermelho-e);
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.intro-content h3:after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--laranja-e);
+}
+
+.intro-content p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+.equipe-foto {
+    flex: 1;
+    min-height: 300px;
+}
+
+.foto-placeholder {
+    width: 100%;
+    height: 100%;
+    background-color: var(--bege);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--vermelho-e);
+    font-style: italic;
+}
+
+/* Seção de membros da equipe */
+.membros-equipe {
+    margin-bottom: 4rem;
+}
+
+.membros-equipe h3 {
+    color: var(--vermelho-e);
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+}
+
+.membros-equipe h3:after {
+    content: '';
+    position: absolute;
+    bottom: -0.8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--laranja-e);
+}
+
+.membros-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.membro-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.membro-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.membro-foto {
+    height: 220px;
+    overflow: hidden;
+}
+
+.membro-info {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.membro-info h4 {
+    font-size: 1.3rem;
+    color: var(--vermelho-e);
+    margin-bottom: 0.5rem;
+}
+
+.cargo {
+    font-weight: 600;
+    color: var(--laranja-e);
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.descricao {
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555;
+    flex: 1;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
+}
+
+.social-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--bege);
+    color: var(--vermelho-e);
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.social-link:hover {
+    background-color: var(--laranja-c);
+}
+
+/* Seção de contato */
+.contato-secao {
+    background-color: #f9f9f9;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.contato-secao h3 {
+    color: var(--vermelho-e);
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.contato-container {
+    display: flex;
+    gap: 3rem;
+}
+
+.contato-info, .contato-form {
+    flex: 1;
+}
+
+.contato-lista {
+    list-style: none;
+    margin-top: 1.5rem;
+}
+
+.contato-lista li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.contato-lista li:before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--laranja-e);
+    font-size: 1.2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #444;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: var(--fonte);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--laranja-e);
+}
+
+.enviar-btn {
+    background-color: var(--vermelho-e);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.enviar-btn:hover {
+    background-color: var(--laranja-e);
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+    .membros-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .equipe-intro {
+        flex-direction: column;
+    }
+    
+    .equipe-foto {
+        min-height: 250px;
+    }
+    
+    .contato-container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .conteudo {
+        margin-left: 0;
+        max-width: 100%;
+        padding: 1.5rem;
+    }
+    
+    .criadores-header h2 {
+        font-size: 2rem;
+    }
+    
+    .subtitulo {
+        font-size: 1.1rem;
+    }
+    
+    .intro-content {
+        padding: 1.5rem;
+    }
+    
+    .membros-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contato-secao {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .criadores-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .subtitulo {
+        font-size: 1rem;
+    }
+    
+    .intro-content h3, 
+    .membros-equipe h3,
+    .contato-secao h3 {
+        font-size: 1.5rem;
+    }
+    
+    .membro-foto {
+        height: 200px;
+    }
+    
+    .membro-info {
+        padding: 1.2rem;
+    }
+    
+    .membro-info h4 {
+        font-size: 1.2rem;
+    }
+    
+    .social-link {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+    
+    .contato-secao {
+        padding: 1.2rem;
+    }
+}
