@@ -74,11 +74,31 @@
             
             <p>Todavia, a sugestão mais importante na qual o campus poderia fazer seria um painel de monitoramento ambiental gamificado, ou seja, fazer um aplicativo de monitoramento do consumo energético dentro da faculdade, usando um sistema de gamificação. Ele pode acabar detectando gastos desnecessários e até mesmo influenciar os estudantes a praticarem ações mais sustentáveis na faculdade. Isso faria com que resolvesse problemas importantes, se o campus estiver totalmente apto a transformar seu lugar com uma pegada mais sustentável, como a falta de dados precisos sobre unidades de emergia de tecnologias. (OLIVEIRA; JÚNIOR, 2022)</p>
             
-            <div class="imagem-container">
-                <div class="imagem-placeholder">
-                    <p>Imagem: Aplicativo de monitoramento ambiental gamificado</p>
-                </div>
-            </div>
+            <!-- Exemplo de protótipo visual de aplicativo gamificado -->
+<div class="app-gamificado">
+    <div class="app-header">
+        <span class="app-logo">🌱</span>
+        <span class="app-title">EcoMonitor</span>
+    </div>
+    <div class="app-progress">
+        <label>Meta de economia de energia</label>
+        <div class="progress-bar">
+            <div class="progress" id="progress-bar" style="width: 65%"></div>
+        </div>
+        <span class="progress-value" id="progress-value">65% atingido</span>
+    </div>
+    <div class="app-score">
+        <span>🏆 Pontuação: <strong>1.250</strong></span>
+        <span>🌍 Missões concluídas: <strong>8</strong></span>
+    </div>
+    <div class="app-achievements">
+        <span class="badge">💡 Economizador</span>
+        <span class="badge">🚲 Transporte Limpo</span>
+        <span class="badge">♻️ Reciclador</span>
+    </div>
+    <button class="app-btn" id="btn-acao">Registrar nova ação sustentável</button>
+    <span id="confete-area"></span>
+</div>
             
             <p>A partir dessas informações compreendemos que a possível aplicação dessas soluções permitiria que a UNIP Paraíso se destacasse como um modelo de campus sustentável, auxiliando não apenas na redução de impactos ambientais, mas também no engajamento de estudantes e profissionais presentes na universidade adotarem uma cultura mais ecológica e baseada no conceito de emergia, trazendo benefícios duradouros e reforçando o compromisso da universidade com a sustentabilidade e o uso racional dos recursos naturais.</p>
         </div>
@@ -90,5 +110,36 @@
     <footer>
         <p>&copy; 2024 EMERGIA. Todos os direitos reservados.</p>
     </footer>
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+    const btn = document.getElementById('btn-acao');
+    const progress = document.getElementById('progress-bar');
+    const value = document.getElementById('progress-value');
+    let percent = 65;
+
+    btn.addEventListener('click', function () {
+        // Aumenta a porcentagem até 100%
+        percent = Math.min(percent + 5, 100);
+        progress.style.width = percent + '%';
+        value.textContent = percent + '% atingido';
+
+        // Confete animado
+        soltaConfete();
+    });
+
+    function soltaConfete() {
+        const area = document.getElementById('confete-area');
+        area.innerHTML = '';
+        for (let i = 0; i < 30; i++) {
+            const confete = document.createElement('div');
+            confete.className = 'confete';
+            confete.style.left = (Math.random() * 90 + 5) + '%';
+            confete.style.background = `hsl(${Math.random()*360},90%,60%)`;
+            confete.style.animationDelay = (Math.random() * 0.5) + 's';
+            area.appendChild(confete);
+        }
+        setTimeout(() => { area.innerHTML = ''; }, 1200);
+    }
+});</script>     
 </body>
 </html>

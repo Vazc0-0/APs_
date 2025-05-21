@@ -331,4 +331,133 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     console.log('Gráfico de recursos agregados ajustado com sucesso!');
+
+    // Gráfico 3: Análise da contribuição dos recursos tecnológicos
+    const ctxTecnologia = document.getElementById('grafico-contribuicao-tecnologica');
+
+    if (!ctxTecnologia) {
+        console.error('Não foi possível obter o contexto do canvas para o gráfico 3!');
+        return;
+    } else {
+        console.log('Contexto do canvas para o gráfico 3 obtido com sucesso:', ctxTecnologia);
+    }
+
+    console.log('Inicializando o gráfico 3...');
+    new Chart(ctxTecnologia, {
+        type: 'bar',
+        data: {
+            labels: [
+                'Site 1 EME(CONV/SCALE)', 'Site 1 SED',
+                'Site 2 EME(CONV/SCALE)', 'Site 2 SED',
+                'Site A EME(CONV/SCALE)', 'Site A SED',
+                'Site B EME(CONV/SCALE)', 'Site B SED'
+            ],
+            datasets: [
+                {
+                    label: 'Electricity',
+                    data: [2.2e11, 2.2e11, 2.2e11, 2.2e11, 6.5e11, 7.5e11, 1.1e12, 1.0e12],
+                    backgroundColor: '#ffe135'
+                },
+                {
+                    label: 'Sodium Hydroxide',
+                    data: [0.7e11, 0.7e11, 0.7e11, 0.7e11, 1.2e11, 1.3e11, 2.0e11, 1.8e11],
+                    backgroundColor: '#4fc3f7'
+                },
+                {
+                    label: 'Aluminium Sulfate',
+                    data: [0.5e11, 0.5e11, 0.5e11, 0.5e11, 1.0e11, 1.1e11, 1.7e11, 1.5e11],
+                    backgroundColor: '#ba68c8'
+                },
+                {
+                    label: 'Fuel Oil',
+                    data: [0.2e11, 0.2e11, 0.2e11, 0.2e11, 0.3e11, 0.3e11, 0.5e11, 0.4e11],
+                    backgroundColor: '#ff7043'
+                },
+                {
+                    label: 'Activated Carbon & Regenerated',
+                    data: [0.3e11, 0.3e11, 0.3e11, 0.3e11, 0.7e11, 0.8e11, 1.2e11, 1.1e11],
+                    backgroundColor: '#8d6e63'
+                },
+                {
+                    label: 'Iron Chloride',
+                    data: [0.4e11, 0.4e11, 0.4e11, 0.4e11, 0.8e11, 0.9e11, 1.5e11, 1.3e11],
+                    backgroundColor: '#1976d2'
+                },
+                {
+                    label: 'Other chemicals',
+                    data: [0.2e11, 0.2e11, 0.2e11, 0.2e11, 0.5e11, 0.6e11, 0.9e11, 0.8e11],
+                    backgroundColor: '#f06292'
+                },
+                {
+                    label: 'Lime & Quicklime',
+                    data: [0.3e11, 0.3e11, 0.3e11, 0.3e11, 1.0e11, 1.1e11, 1.8e11, 1.6e11],
+                    backgroundColor: '#cddc39'
+                },
+                {
+                    label: 'Potassium permanganate',
+                    data: [0.1e11, 0.1e11, 0.1e11, 0.1e11, 0.2e11, 0.2e11, 0.3e11, 0.3e11],
+                    backgroundColor: '#ffb300'
+                },
+                {
+                    label: 'Services',
+                    data: [0.2e11, 0.2e11, 0.2e11, 0.2e11, 0.4e11, 0.5e11, 0.7e11, 0.6e11],
+                    backgroundColor: '#64b5f6'
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { position: 'top' },
+                title: {
+                    display: true,
+                    text: 'Análise da contribuição dos recursos tecnológicos (seJ/m³)'
+                }
+            },
+            animation: {
+                duration: 1200
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'seJ/m³'
+                    }
+                }
+            }
+        }
+    });
+
+    console.log('Gráfico 3 inicializado com sucesso!');
+
+    // Confete e barra animada para o EcoMonitor
+    const btn = document.getElementById('btn-acao');
+    const progress = document.getElementById('progress-bar');
+    const value = document.getElementById('progress-value');
+    let percent = 65;
+
+    btn.addEventListener('click', function () {
+        // Aumenta a porcentagem até 100%
+        percent = Math.min(percent + 5, 100);
+        progress.style.width = percent + '%';
+        value.textContent = percent + '% atingido';
+
+        // Confete animado
+        soltaConfete();
+    });
+
+    function soltaConfete() {
+        const area = document.getElementById('confete-area');
+        area.innerHTML = '';
+        for (let i = 0; i < 30; i++) {
+            const confete = document.createElement('div');
+            confete.className = 'confete';
+            confete.style.left = (Math.random() * 90 + 5) + '%';
+            confete.style.background = `hsl(${Math.random()*360},90%,60%)`;
+            confete.style.animationDelay = (Math.random() * 0.5) + 's';
+            area.appendChild(confete);
+        }
+        setTimeout(() => { area.innerHTML = ''; }, 1200);
+    }
 });

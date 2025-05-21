@@ -89,17 +89,8 @@ canvas {
     height: 100%;
 }
 
-.imagem-placeholder {
-    background-color: rgba(240, 173, 108, 0.3);
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 1rem;
-    color: var(--vermelho-e);
-    font-style: italic;
-}
+
+
 
 #globe-container {
     width: 100%;

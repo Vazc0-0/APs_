@@ -17,20 +17,104 @@
             </div>
             <nav class="barra">
                 <ul class="barra_textos menu-principal">
-                    <li><a href="../index.html" class="active">O QUE É EMERGIA</a></li>
+                    <li><a href="../index.html">O QUE É EMERGIA</a></li>
                     <li><a href="./unip.html">EMERGIA NA UNIP</a></li>
-                    <li><a href="./solucao.html">SOLUÇÕES COM EMERGIA</a></li>
+                    <li><a href="./solucao.html" class="active">SOLUÇÕES COM EMERGIA</a></li>
                 </ul>
                 <ul class="barra_textos menu-secundario">
                     <li><a href="./criadores.html">SOBRE NÓS</a></li>
                 </ul>
             </nav>
         </aside>
-        
-        
+        <main class="conteudo">
+            <h2>Soluções com Emergia</h2>
+            <p>
+                Aqui você pode descrever as soluções sustentáveis baseadas no conceito de emergia, exemplos de aplicação, benefícios e cases de sucesso.
+            </p>
+            
+            <div class="calculadora-energia">
+                <div class="calc-fisica">
+                    <div class="calc-titulo">🔋 Calculadora de Energia</div>
+                    <div class="calc-visor" id="visor">
+                        <span id="visor-aparelho">Aparelho: -</span><br>
+                        <span id="visor-potencia">Potência: -</span><br>
+                        <span id="visor-tempo">Tempo: -</span>
+                    </div>
+                    <form id="calc-form" autocomplete="off" onsubmit="return false;">
+                        <div class="calc-teclado">
+                            <input type="text" id="aparelho" placeholder="Aparelho" class="calc-input" required>
+                            <input type="number" id="potencia" placeholder="Potência (W)" class="calc-input" min="1" required>
+                            <input type="number" id="tempo" placeholder="Tempo (h)" class="calc-input" min="1" required>
+                            <button type="submit" class="calc-btn calc-btn-calc">Calcular</button>
+                            <button type="reset" class="calc-btn calc-btn-reset">Limpar</button>
+                        </div>
+                    </form>
+                    <div id="resultado" class="calc-resultado"></div>
+                    <div id="dicas" class="calc-dicas"></div>
+                </div>
 
+                <script>
+                const aparelhoInput = document.getElementById('aparelho');
+                const potenciaInput = document.getElementById('potencia');
+                const tempoInput = document.getElementById('tempo');
+
+                function atualizarVisor() {
+                    document.getElementById('visor-aparelho').textContent = "Aparelho: " + (aparelhoInput.value || "-");
+                    document.getElementById('visor-potencia').textContent = "Potência: " + (potenciaInput.value ? potenciaInput.value + " W" : "-");
+                    document.getElementById('visor-tempo').textContent = "Tempo: " + (tempoInput.value ? tempoInput.value + " h" : "-");
+                }
+
+                aparelhoInput.addEventListener('input', atualizarVisor);
+                potenciaInput.addEventListener('input', atualizarVisor);
+                tempoInput.addEventListener('input', atualizarVisor);
+
+                document.getElementById('calc-form').onsubmit = function() {
+                    const aparelho = aparelhoInput.value.trim();
+                    const potencia = parseFloat(potenciaInput.value);
+                    const tempo = parseFloat(tempoInput.value);
+
+                    if (!aparelho || isNaN(potencia) || isNaN(tempo)) {
+                        document.getElementById('resultado').innerHTML = "<span style='color:red'>Preencha todos os campos corretamente.</span>";
+                        document.getElementById('dicas').innerHTML = "";
+                        return false;
+                    }
+
+                    // Energia (J) = Potência (W) x Tempo (h) x 3600
+                    const energia = potencia * tempo * 3600;
+                    const energiaKWh = (potencia * tempo / 1000).toFixed(2);
+
+                    document.getElementById('resultado').innerHTML = 
+                        `<div class="calc-box">
+                            <span>🔌 <strong>${aparelho}</strong></span><br>
+                            <span>⚡ <strong>${energia.toLocaleString()} Joules</strong> ou <strong>${energiaKWh} kWh</strong></span>
+                        </div>`;
+
+                    let dica = "";
+                    if (energia < 1e6) {
+                        dica = "Ótimo! Seu consumo está baixo. Continue desligando aparelhos que não estiver usando.";
+                    } else if (energia < 1e7) {
+                        dica = "Consumo moderado. Prefira aparelhos eficientes e evite uso prolongado.";
+                    } else {
+                        dica = "Consumo alto! Reduza o tempo de uso, prefira aparelhos com selo Procel e evite stand-by.";
+                    }
+                    document.getElementById('dicas').innerHTML = `<div class="calc-box dica"><em>Dica:</em> ${dica}</div>`;
+                    return false;
+                };
+
+                document.querySelector('.calc-btn-reset').onclick = function() {
+                    document.getElementById('resultado').innerHTML = "";
+                    document.getElementById('dicas').innerHTML = "";
+                    aparelhoInput.value = "";
+                    potenciaInput.value = "";
+                    tempoInput.value = "";
+                    atualizarVisor();
+                };
+
+                atualizarVisor();
+                </script>
+            </div>
+        </main>
     </div>
-    
     <footer>
         <p>&copy; 2024 EMERGIA. Todos os direitos reservados.</p>
     </footer>
