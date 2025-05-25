@@ -1,0 +1,157 @@
+.calculadora-energia {
+    margin: 2rem 0;
+}
+
+.calc-fisica {
+    background-color: var(--bege);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.calc-fisica:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.calc-titulo {
+    color: var(--vermelho-e);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-align: center;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(240, 55, 76, 0.2);
+}
+
+.calc-visor {
+    background-color: var(--branco);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    font-family: var(--fonte);
+    font-size: 0.9rem;
+    color: var(--preto);
+    line-height: 1.6;
+}
+
+.calc-visor span {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+}
+
+.calc-teclado {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.calc-input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: var(--fonte);
+    background-color: var(--branco);
+    transition: var(--transition);
+    box-sizing: border-box;
+}
+
+.calc-input:focus {
+    outline: none;
+    border-color: var(--vermelho-e);
+    box-shadow: 0 0 0 2px rgba(240, 55, 76, 0.1);
+}
+
+.calc-input::placeholder {
+    color: #999;
+    font-weight: 400;
+}
+
+.calc-btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    font-family: var(--fonte);
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.calc-btn-calc {
+    background-color: var(--vermelho-e);
+    color: var(--branco);
+}
+
+.calc-btn-calc:hover {
+    background-color: var(--laranja-e);
+    transform: translateY(-2px);
+}
+
+.calc-btn-reset {
+    background-color: #666;
+    color: var(--branco);
+    margin-top: 0.5rem;
+}
+
+.calc-btn-reset:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+}
+
+.calc-resultado,
+.calc-dicas {
+    margin-top: 1rem;
+}
+
+.calc-box {
+    background-color: var(--branco);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--vermelho-e);
+}
+
+.calc-box.dica {
+    background-color: #f0f8f0;
+    border-left-color: #4caf50;
+}
+
+.calc-box strong {
+    color: var(--vermelho-e);
+    font-weight: 700;
+}
+
+.calc-box.dica em {
+    color: #2e7d32;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .calc-fisica {
+        margin: 1rem;
+        padding: 1rem;
+    }
+    
+    .calc-titulo {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .calc-input,
+    .calc-btn {
+        padding: 0.7rem;
+        font-size: 0.9rem;
+    }
+}
