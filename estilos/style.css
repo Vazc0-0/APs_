@@ -103,3 +103,88 @@ footer {
     width: 100%;
 }
 
+/* Responsividade */
+@media (max-width: 768px) {
+    .barra_lateral {
+        width: 200px;
+        position: fixed;
+        left: -200px;
+        top: 0;
+        height: 100vh;
+        transition: var(--transition);
+    }
+
+    .barra_lateral.ativo {
+        left: 0;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    /* Um botão para abrir o menu (visível apenas em telas pequenas) */
+    .menu-toggle {
+        display: block;
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        background-color: var(--vermelho-e);
+        color: var(--branco);
+        border: none;
+        padding: 0.5rem 1rem;
+        font-size: 1.2rem;
+        border-radius: 5px;
+        cursor: pointer;
+        z-index: 101;
+    }
+
+    /* Opcional: você pode querer ajustar o conteúdo principal ao lado do menu lateral */
+    .conteudo {
+        margin-left: 0;
+        padding: 1rem;
+    }
+}
+
+/* Por padrão, o botão do menu não aparece em telas grandes */
+.menu-toggle {
+    display: none;
+}
+
+/* Estilos existentes */
+
+.barra {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.menu-toggle div {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 5px 0;
+  transition: 0.4s;
+}
+
+@media (max-width: 768px) {
+  .menu-principal,
+  .menu-secundario {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu-principal.active,
+  .menu-secundario.active {
+    display: flex;
+  }
+}
