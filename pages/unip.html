@@ -101,12 +101,10 @@ document.addEventListener('DOMContentLoaded', function () {
     let percent = 65;
 
     btn.addEventListener('click', function () {
-        // Aumenta a porcentagem até 100%
         percent = Math.min(percent + 5, 100);
         progress.style.width = percent + '%';
         value.textContent = percent + '% atingido';
 
-        // Confete animado
         soltaConfete();
     });
 

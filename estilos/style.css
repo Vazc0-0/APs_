@@ -103,7 +103,6 @@ footer {
     width: 100%;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
     .barra_lateral {
         width: 200px;
@@ -122,7 +121,6 @@ footer {
         flex-direction: column;
     }
 
-    /* Um botão para abrir o menu (visível apenas em telas pequenas) */
     .menu-toggle {
         display: block;
         position: fixed;
@@ -138,19 +136,16 @@ footer {
         z-index: 101;
     }
 
-    /* Opcional: você pode querer ajustar o conteúdo principal ao lado do menu lateral */
     .conteudo {
         margin-left: 0;
         padding: 1rem;
     }
 }
 
-/* Por padrão, o botão do menu não aparece em telas grandes */
 .menu-toggle {
     display: none;
 }
 
-/* Estilos existentes */
 
 .barra {
   display: flex;

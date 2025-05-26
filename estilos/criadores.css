@@ -1,6 +1,3 @@
-/* Estilos específicos para a página de criadores */
-
-/* Cabeçalho da página */
 .criadores-header {
     text-align: center;
     margin-bottom: 3rem;
@@ -95,7 +92,6 @@
     overflow: hidden;
 }
 
-/* CORREÇÃO: Imagens responsivas para todos os placeholders */
 .foto-placeholder img,
 .foto-placeholder_banner img {
     width: 100%;
@@ -118,7 +114,6 @@
     z-index: 1;
 }
 
-/* Seção de membros da equipe */
 .membros-equipe {
     margin-bottom: 4rem;
 }
@@ -342,7 +337,6 @@
     background-color: var(--laranja-e);
 }
 
-/* Responsividade */
 @media (max-width: 1200px) {
     .membros-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -433,7 +427,6 @@
     }
 }
 
-/* Melhorias adicionais para imagens muito pequenas */
 @media (max-width: 480px) {
     .equipe-foto {
         min-height: 160px;

@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function () {
             ]
         },
         options: {
-            indexAxis: 'y', // Altera o eixo para barras horizontais
+            indexAxis: 'y', 
             responsive: true,
             plugins: {
                 legend: {
@@ -207,7 +207,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         console.log('Gráfico 2 inicializado com sucesso!');
 
-    // Gráfico de recursos agregados
     const ctxRecursos = document.getElementById('grafico-recursos').getContext('2d');
 
     new Chart(ctxRecursos, {
@@ -254,14 +253,14 @@ document.addEventListener('DOMContentLoaded', function () {
                     ],
                     borderColor: '#333',
                     borderWidth: 1,
-                    barThickness: 15 // Define a espessura das barras
+                    barThickness: 15 
                 }
             ]
         },
         options: {
-            indexAxis: 'y', // Barras horizontais
+            indexAxis: 'y', 
             responsive: true,
-            maintainAspectRatio: false, // Permite ajustar o tamanho do gráfico
+            maintainAspectRatio: false, 
             plugins: {
                 legend: {
                     display: true,
@@ -323,8 +322,8 @@ document.addEventListener('DOMContentLoaded', function () {
                             size: 12
                         }
                     },
-                    categoryPercentage: 0.8, // Ajusta o espaçamento entre as barras
-                    barPercentage: 0.9 // Ajusta a largura relativa das barras
+                    categoryPercentage: 0.8, 
+                    barPercentage: 0.9 
                 }
             }
         }
@@ -332,7 +331,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     console.log('Gráfico de recursos agregados ajustado com sucesso!');
 
-    // Gráfico 3: Análise da contribuição dos recursos tecnológicos
+
     const ctxTecnologia = document.getElementById('grafico-contribuicao-tecnologica');
 
     if (!ctxTecnologia) {
@@ -431,19 +430,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
     console.log('Gráfico 3 inicializado com sucesso!');
 
-    // Confete e barra animada para o EcoMonitor
+
     const btn = document.getElementById('btn-acao');
     const progress = document.getElementById('progress-bar');
     const value = document.getElementById('progress-value');
     let percent = 65;
 
     btn.addEventListener('click', function () {
-        // Aumenta a porcentagem até 100%
+
         percent = Math.min(percent + 5, 100);
         progress.style.width = percent + '%';
         value.textContent = percent + '% atingido';
 
-        // Confete animado
+
         soltaConfete();
     });
 

@@ -23,7 +23,6 @@ body {
   min-height: 100vh;
 }
 
-/* Barra lateral */
 .barra_lateral {
   position: fixed;
   left: 0;
@@ -70,7 +69,6 @@ body {
   color: var(--vermelho-e);
 }
 
-/* Estilos para o conteúdo principal */
 .conteudo {
   flex: 1;
   margin-left: var(--menu-size);
